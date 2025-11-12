@@ -1,0 +1,11 @@
+[Unit]
+Description=AmoCRM Daily Events Report
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/amocrm-events-monitor/.venv/bin/python /opt/amocrm-events-monitor/app/main_daily_report.py
+WorkingDirectory=/opt/amocrm-events-monitor
+
+[Install]
+WantedBy=multi-user.target
